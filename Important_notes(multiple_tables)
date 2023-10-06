@@ -8,8 +8,45 @@
 -- there are many types of jions
 -- eg:- select o.product_id,order_id,name,p.unit_price from order_items o join products p;(jioning with out linking with commomcal makes it clumsy)
 -- eg:- select o.product_id,order_id,name,p.unit_price from order_items o join products p on o.product_id = p.product_id;(linked)
+-- eg:- select p.payment_id,c.client_id,c.name,p.amount,pm.name from clients c join payments p on c.client_id = p.client_id join payment_methods pm  on p.payment_method=pm.payment_method_id;(3 tables link)
+-- implicit jion is same as inner jion just change in syntax 
+-- eg:- select * from orders o,customers c where o.customer_id=c.customer_id;
 
--- self jion ,jions the same table
+-- self join ,joins the same table
 -- hard to explain try example
+-- eg:- select e.employee_id,e.first_name,e.last_name,m.employee_id,m.first_name from employees e join employees m on e.reports_to=m.employee_id; 
+
+-- compound join statement
+-- when a table donot have a unique and not null col they have to use 2 col as compund key as primary key 
+-- for linking those table we use compound jion
+-- just link 2 col that act as compound key using 'and'
+
+-- outer jion
+-- the main difference between inner and outer is ,inner only retrive record that obeys linking condition where as outer join retrive all based on left or right join
+-- left join mean consider all records in left table of join keyword right join is visa versa\
+-- eg:- select o.order_id,o.order_date,c.first_name as name,s.name,os.name as status_of_order from orders o left join customers c on o.customer_id=c.customer_id left join shippers s on o.shipper_id=s.shipper_id left join order_statuses os on o.status=os.order_status_id 
+
+-- using clause
+-- if in linking condition both col name and values are same in this case we can use using clause
+-- eg:- select i.invoice_date as date,c.name,p.amount,pm.name from invoices i join clients c using(client_id) join payments p using(invoice_id) join payment_methods pm on pm.payment_method_id=p.payment_method
+
+-- natural join ,in this join sql automatically set some link
+-- donot use
+
+-- cross join , in this join very individual record linked with other table individual record ,if t1 have 10 records and t2 have 10 records both give 100 records
+-- use case is shirt colour with shirt size
+
+-- union is used to combine records 
+-- eg:- select customer_id,first_name,points,"Bronze" as Type from customers where points < 2000  
+        UNION
+        select customer_id,first_name,points,"Silver" as Type from customers where points between 2000 and 3000 
+        UNION
+        select customer_id,first_name,points,"Gold" as Type from customers where points > 3000;
+
+
+
+
+
+
 
 
