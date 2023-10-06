@@ -1,7 +1,23 @@
+-- '--' used to comment in sql
+-- sql is not case sentive but typing keyword in caps is good pratice
 -- use keyword used to select DB
 -- eg:- use sql_inventory;
 -- select(for reteive data) and where(for filter) are clauses after select keyword type the col you want to reteive from DB
 -- AS keyword used to rename a col
 -- eg:- SELECT name,unit_price AS initial_price,(unit_price * 2 ) AS new_price from products; 
 -- distint keyword used to retrive unique data from select col no duplicates
+
 -- <,>,<> is same as !=,=,>=,<= are compairsion operators in sql used in where clause
+-- data formate in sql is yyyy-mm-dd
+-- date and text data should given in "" in where clause
+-- eg:- select * from orders where order_date > "2017-12-30";
+
+-- operators and,or,not precedence (),and,or
+-- arthemetic operations precedence follows BODMAS
+-- not operator converts 'or' to 'and' ,'and' to 'or','<' to '>=' and '>' to '<='
+
+-- 'In' operator used in some situation to reduce letter typed
+-- eg:-select * from products where quantity_in_stock = 49 or 38 or 72 (wrong syntax here)
+-- select * from products where quantity_in_stock = 49 or quantity_in_stock=38 or quantity_in_stock=72;(too long)
+-- select * from products where quantity_in_stock in (49,38,72);(using IN)
+
