@@ -1,0 +1,15 @@
+-- jions --
+-- jion(default inner jion) used to merge 2 or more tables to retrive data using a common col
+-- inner jion, jions tables using commoncol 
+-- if we want to display common col use tablename1.commoncol (or) tablename2.commoncol
+-- we can create alias name by typing alias name after the actual name
+-- after defining alias name actual name does'nt works
+-- in jion use 'on' to link commoncol
+-- there are many types of jions
+-- eg:- select o.product_id,order_id,name,p.unit_price from order_items o join products p;(jioning with out linking with commomcal makes it clumsy)
+-- eg:- select o.product_id,order_id,name,p.unit_price from order_items o join products p on o.product_id = p.product_id;(linked)
+
+-- self jion ,jions the same table
+-- hard to explain try example
+
+
