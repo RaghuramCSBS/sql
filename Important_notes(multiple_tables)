@@ -23,7 +23,7 @@
 
 -- outer jion
 -- the main difference between inner and outer is ,inner only retrive record that obeys linking condition where as outer join retrive all based on left or right join
--- left join mean consider all records in left table of join keyword right join is visa versa\
+-- left join mean consider all records in left table of join keyword right join is vica verca
 -- eg:- select o.order_id,o.order_date,c.first_name as name,s.name,os.name as status_of_order from orders o left join customers c on o.customer_id=c.customer_id left join shippers s on o.shipper_id=s.shipper_id left join order_statuses os on o.status=os.order_status_id 
 
 -- using clause
