@@ -1,1 +1,29 @@
+What is an Aggregate Function in SQL?
+An aggregate function in SQL returns one value after calculating multiple values of a column. We often use aggregate functions with the GROUP BY and HAVING clauses of the SELECT statement.
+
+There are 5 types of SQL aggregate functions:
+
+Count()
+Sum()
+Avg()
+Min()
+Max()
+
+
+GROUP BY
+In SQL, the GROUP BY clause is used to group rows by one or more columns.
+to group the data before applying aggregate function
+--> group by clause always after where clause and before order by clause
+Example
+SELECT COUNT(order_id), item
+FROM Orders
+GROUP BY item;
+
+GROUP BY With HAVING Clause
+We can use the GROUP BY clause with the HAVING clause to filter the result set based on aggregate functions. For example,
+
+SELECT COUNT(customer_id), country
+FROM Customers
+GROUP BY country
+HAVING COUNT(customer_id) > 1;
 
