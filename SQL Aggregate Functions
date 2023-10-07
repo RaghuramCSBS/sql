@@ -27,3 +27,5 @@ FROM Customers
 GROUP BY country
 HAVING COUNT(customer_id) > 1;
 
+with rollup is used so it SumUp all col that have aggregate function
+
